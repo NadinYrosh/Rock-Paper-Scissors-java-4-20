@@ -2,13 +2,19 @@ import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
 public class Game {
-  public String checkWinner(String player1, String player2) {
+  public Boolean checkWinner(String player1, String player2) {
     if (player1.equals("rock") && player2.equals("scissors")){
-      return "rock win";
+      return true;
     } else if (player1.equals("rock") && player2.equals("paper")){
-      return "rock lose";
+      return false;
+    } else if (player1.equals("scissors") && player2.equals("paper")){
+      return true;
     } else if (player1.equals("rock") && player2.equals("rock")){
-      return "tie";
+      return true;
+    } else if (player1.equals("paper") && player2.equals("paper")){
+      return true;
+    } else if (player1.equals("scissors") && player2.equals("scissors")){
+      return true;
     }
     return null;
   }
