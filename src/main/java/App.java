@@ -17,7 +17,15 @@ public class App {
     get("/results", (request, response) -> {
         HashMap model = new HashMap();
         model.put("template", "templates/results.vtl" );
+
+        String word1 = request.queryParams("player1");
+        String word2 = request.queryParams("player2");
+        Game myGame = new Game();
+        Boolean winner = myGame.checkWinner(word1, word2);
+
+        model.put("results", winner);
         return new ModelAndView(model, "templates/layout.vtl");
       }, new VelocityTemplateEngine());
+
   }
 }

@@ -10,9 +10,9 @@ public class GameTest {
     assertEquals(true, testGame.checkWinner("rock", "scissors"));
   }
   @Test
-  public void checkWinner_rockBeatsPaper_false() {
+  public void checkWinner_paperBeatsRock_true() {
     Game testGame = new Game();
-    assertEquals(false, testGame.checkWinner("rock", "paper"));
+    assertEquals(true, testGame.checkWinner("paper", "rock"));
   }
   @Test
   public void checkWinner_scissorsBeatPaper_true() {
@@ -20,18 +20,34 @@ public class GameTest {
     assertEquals(true, testGame.checkWinner("scissors", "paper"));
   }
   @Test
-  public void checkWinner_rockTie_true() {
+  public void checkWinner_rockBeatsPaper_false() {
     Game testGame = new Game();
-    assertEquals(true, testGame.checkWinner("rock", "rock"));
+    assertEquals(false, testGame.checkWinner("rock", "paper"));
   }
   @Test
-  public void checkWinner_paperTie_true() {
+  public void checkWinner_paperBeatsScissors_false() {
     Game testGame = new Game();
-    assertEquals(true, testGame.checkWinner("paper", "paper"));
+    assertEquals(false, testGame.checkWinner("paper", "scissors"));
   }
   @Test
-  public void checkWinner_scissorsTie_true() {
+  public void checkWinner_scissorsBeatRock_false() {
     Game testGame = new Game();
-    assertEquals(true, testGame.checkWinner("scissors", "scissors"));
+    assertEquals(false, testGame.checkWinner("scissors", "rock"));
   }
+
 }
+  // @Test
+  // public void checkWinner_rockTie_true() {
+  //   Game testGame = new Game();
+  //   assertEquals(true, testGame.checkWinner("rock", "rock"));
+  // }
+  // @Test
+  // public void checkWinner_paperTie_true() {
+  //   Game testGame = new Game();
+  //   assertEquals(true, testGame.checkWinner("paper", "paper"));
+  // }
+  // @Test
+  // public void checkWinner_scissorsTie_true() {
+  //   Game testGame = new Game();
+  //   assertEquals(true, testGame.checkWinner("scissors", "scissors"));
+  // }
