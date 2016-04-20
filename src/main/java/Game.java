@@ -7,6 +7,8 @@ public class Game {
       return "rock win";
     } else if (player1.equals("rock") && player2.equals("paper")){
       return "rock lose";
+    } else if (player1.equals("rock") && player2.equals("rock")){
+      return "tie";
     }
     return null;
   }

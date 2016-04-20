@@ -16,4 +16,10 @@ public class GameTest {
     String expected = "rock lose";
     assertEquals(expected, testGame.checkWinner("rock", "paper"));
   }
+  @Test
+  public void checkWinner_rockTie_true() {
+    Game testGame = new Game();
+    String expected = "tie";
+    assertEquals(expected, testGame.checkWinner("rock", "rock"));
+  }
 }
