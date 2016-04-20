@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="GameTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-04-20T18:17:38" hostname="epicodus-69.local" time="0.002">
+<testsuite name="GameTest" tests="6" skipped="0" failures="0" errors="0" timestamp="2016-04-20T18:42:19" hostname="epicodus-69.local" time="0.002">
   <properties/>
   <testcase name="checkWinner_rockTie_true" classname="GameTest" time="0.001"/>
   <testcase name="checkWinner_scissorsBeatPaper_true" classname="GameTest" time="0.0"/>
