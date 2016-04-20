@@ -3,6 +3,7 @@ import spark.ModelAndView;
 import spark.template.velocity.VelocityTemplateEngine;
 import static spark.Spark.*;
 
+
 public class App {
   public static void main(String[] args) {
     staticFileLocation("/public");
@@ -22,8 +23,19 @@ public class App {
         String word2 = request.queryParams("player2");
         Game myGame = new Game();
         Boolean winner = myGame.checkWinner(word1, word2);
+        String outputString = "";
 
-        model.put("results", winner);
+        if (winner == null) {
+          outputString = "It's a tie!";
+        } else {
+          if (winner.equals(true)) {
+            outputString = String.format("Player 1 - %s - WINS!!!", word1);
+          } else if (winner.equals(false)) {
+            outputString = String.format("Player 2 - %s - WINS!!!", word2);
+          }
+        }
+
+        model.put("results", outputString);
         return new ModelAndView(model, "templates/layout.vtl");
       }, new VelocityTemplateEngine());
 
