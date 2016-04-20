@@ -10,4 +10,10 @@ public class GameTest {
     String expected = "rock win";
     assertEquals(expected, testGame.checkWinner("rock", "scissors"));
   }
+  @Test
+  public void checkWinner_paperBeatsRock_true() {
+    Game testGame = new Game();
+    String expected = "rock lose";
+    assertEquals(expected, testGame.checkWinner("rock", "paper"));
+  }
 }
